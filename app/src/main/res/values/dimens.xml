@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fragment_horizontal_padding">0dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <dimen name="tablet_margin_top">144dp</dimen>
+    <dimen name="tablet_margin_sides">96dp</dimen>
+    <dimen name="tablet_margin_bottom">72dp</dimen>
+
+    <dimen name="first_start_top_margin">33dp</dimen>
+</resources>
