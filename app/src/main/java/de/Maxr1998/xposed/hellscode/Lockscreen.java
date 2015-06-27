@@ -2,7 +2,6 @@ package de.Maxr1998.xposed.hellscode;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.IXposedHookZygoteInit;
@@ -11,6 +10,7 @@ import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import eu.chainfire.libsuperuser.Shell;
 
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
@@ -49,9 +49,7 @@ public class Lockscreen implements IXposedHookZygoteInit, IXposedHookLoadPackage
                             XposedHelpers.callMethod(param.thisObject, "keyguardDone", true, true);
                         }
                         try {
-                            FileWriter writer = new FileWriter(KERNEL_CODE_FILE);
-                            writer.write(0);
-                            writer.close();
+                            Shell.run("su", new String[]{"echo '0' > \"" + KERNEL_CODE_FILE + "\""}, null, false);
                         } catch (Exception e) {
                             XposedBridge.log(e.getCause());
                         }

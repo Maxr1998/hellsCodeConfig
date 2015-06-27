@@ -55,6 +55,7 @@ repositories {
 dependencies {
     compile 'com.android.support:support-v4:22.2.0'
     compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'eu.chainfire:libsuperuser:1.0.0.+'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     provided files('lib/XposedBridgeApi-20150213.jar')
